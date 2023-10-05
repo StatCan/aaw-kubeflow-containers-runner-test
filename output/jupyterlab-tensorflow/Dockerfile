@@ -417,7 +417,7 @@ ENV OMPP_INSTALL_DIR=/opt/openmpp/${OMPP_VERSION}
 
 # OpenM++ expects sqlite to be installed (not just libsqlite)
 RUN apt-get install --yes sqlite3 \
-    && wget -q https://github.com/openmpp/main/releases/download/v${OMPP_VERSION}/openmpp_debian_${OMPP_PKG_DATE}.tar.gz -O /tmp/ompp.tar.gz \
+    && wget -q https://github.com/openmpp/main/releases/download/v${OMPP_VERSION}/openmpp_debian_mpi_${OMPP_PKG_DATE}.tar.gz -O /tmp/ompp.tar.gz \
     && echo "${SHA256ompp} /tmp/ompp.tar.gz" | sha256sum -c - \
     && mkdir -p ${OMPP_INSTALL_DIR} \
     && tar -xf /tmp/ompp.tar.gz -C ${OMPP_INSTALL_DIR} --strip-components=1
