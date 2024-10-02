@@ -27,8 +27,6 @@ on:
     # Execute at 2am EST every day
     - cron:  '0 21 * * *'
   push:
-    branches:
-      - 'master'
   pull_request:
     types:
       - 'opened'
@@ -73,6 +71,7 @@ jobs:
           - sas
           - jupyterlab-cpu
           - jupyterlab-pytorch
+          - remote-desktop
           # - jupyterlab-tensorflow removed from build. https://jirab.statcan.ca/browse/BTIS-421
     needs: pre-build-checks
     runs-on: ubuntu-latest
